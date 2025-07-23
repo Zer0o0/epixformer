@@ -1,7 +1,7 @@
 ## Introduction
 
-**EIformer** is a transformer-based neural network for trans-cell binding site prediction of DNA binding proteins (DBPs). As shown in the figure, EIformer employs an encoder-decoder architecture to extract features from input DNA sequence and epigenomic information (EI) and predict transcription factor (TF) binding events in distinct cell lines. EIformer can predict binding landscapes for any TF in cell lines of interest, provided we first train a dedicated model for that TF. This would offer valuable biological insights while mitigate the efficiency and cost limitations of ChIP-seq experiments.
-![framework](images/eiformer.jpg)
+**EpiXFormer** is a transformer-based neural network for cell type-specific binding site prediction of DNA binding proteins (DBPs). As shown in the figure, EpiXFormer employs an encoder-decoder architecture to extract features from input DNA sequence and epigenomic information and predict transcription factor (TF) binding events in distinct cell lines. EpiXFormer can predict binding landscapes for any TF in cell lines of interest, provided we first train a dedicated model for that TF. This would offer valuable biological insights while mitigate the efficiency and cost limitations of ChIP-seq experiments.
+![framework](images/epixformer.png)
 
 ## Requirements
 
@@ -16,11 +16,11 @@
 - [NeuronMotif](https://github.com/wzthu/NeuronMotif) (Zheng Wei et al. PNAS. 2023)
 - [FIMO](https://meme-suite.org/meme/doc/fimo.html?man_type=web) (v5.5.1)
 
-## Training your own EIformer model
+## Training your own EpiXFormer model
 
 We have collected training datasets of 32 DBPs from [ENCODE project](https://www.encodeproject.org/) and trained corresponding models. The robust model weights are provided in *models* folder.
 
-We also provide training scripts implemented in [Jupyter notebooks](https://jupyter.org/), with GM12878-CTCF serving as the example case. Training steps are as follow:
+We also provide training scripts implemented in [Jupyter notebooks](https://jupyter.org/), with CTCF-GM12878 serving as the example case. Training steps are as follow:
 
 ### 1. Prepare dataset
 
@@ -43,8 +43,8 @@ We also provide training scripts implemented in [Jupyter notebooks](https://jupy
 
 ### 4. Make prediction
 
-We have demonstrated that EIformer possesses cross-cell type predictive capability. Consequently, models trained on one or multiple cell types can be applied to predict binding event in unseen cell types. The *make_prediction.ipynb* script implements this functionality.
+We have demonstrated that EpiXFormer possesses cross-cell type predictive capability. Consequently, for a TF of intrest, model trained on one or multiple cell types can be applied to predict binding event in unseen cell types. The *make_prediction.ipynb* script implements this functionality.
 
 ---
 
-Additional methodological details are available in our publication [TBD].
+Additional methodological details are available in our publication [TBD]().
